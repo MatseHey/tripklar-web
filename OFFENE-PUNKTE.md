@@ -32,3 +32,24 @@ Sie sind dort entfernt und hier gesammelt. Erledigte Punkte bitte streichen.
   Ob Apple bei WeatherKit-Abfragen selbst Daten speichert oder in Drittländer (USA) übermittelt,
   ist nicht verifiziert. Aktuelle Angaben von Apple zu WeatherKit einholen und ggf. einen
   Drittlandhinweis (DPF/SCC) in beiden Sprachen ergänzen.
+
+## GetYourGuide (Datenschutz Abschnitt 7, seit 14.10.2026)
+
+Grundlage des Abschnitts: Code auf `main` (`GetYourGuideLink.swift`, `GetYourGuideOffer.swift`,
+`GetYourGuideSlider.swift`), GetYourGuide-Partnerbedingungen (Fassung 2. August 2024, Nr. 8.5:
+beide Seiten eigenständige Verantwortliche) und GetYourGuide-Datenschutzerklärung (Verantwortlicher
+GetYourGuide Deutschland GmbH, Berlin; Dienstleister außerhalb der EU über Standardvertragsklauseln).
+Ausführlicher Entwurf und Begründung: `docs/legal/datenschutz-abschnitt-getyourguide-widget.md` im App-Repo.
+
+- [ ] **Netzwerkmitschnitt des Widgets** (Proxyman/Charles oder Web-Inspector): Stimmt die Datenliste
+  in Abschnitt 7? Lädt das Widget weitere Domains nach (CDN, Analyse)? Falls ja, Text DE/EN anpassen.
+- [ ] **Apple-Datenschutzangaben / `PrivacyInfo.xcprivacy`:** Device ID (Besucher-Kennung) und ggf.
+  Product Interaction angeben; Entscheidung „Tracking ja/nein“ (davon hängen ATT-Dialog und
+  Tracking-Domains ab). Am besten schriftlich bei GetYourGuide nachfragen, ob die Besucher-Kennung
+  firmenübergreifend für Werbung genutzt wird.
+- [ ] **Einwilligungszeile in der App:** Link zur Datenschutzerklärung (Abschnitt 7) und kurzer Hinweis
+  auf Widerruf ergänzen; „Ausblenden“ ggf. deutlicher als Widerruf beschriften.
+- [ ] **Anwaltliche Kurzprüfung:** Wirksamkeit der Einwilligung, § 25 TDDDG bei WebViews in Apps,
+  Rechtsgrundlage lit. f für die Partnerlinks.
+- [ ] Schriftliche Bestätigung des GetYourGuide-Partner-Supports, dass Widget und Partnerlinks in
+  einer iOS-App zulässig sind (laut Bedingungen erlaubt, Bestätigung empfohlen).
