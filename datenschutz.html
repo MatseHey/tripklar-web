@@ -73,12 +73,15 @@
       <li>von Ihnen angelegte Termine, Merkzettel-Einträge, Packlisten-Einträge und Ausgaben</li>
     </ul>
     <p>Diese Daten sind für alle Mitglieder desselben Trips sichtbar – das ist die Kernfunktion der App. Private Packlisten-Einträge sehen nur Sie. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO.</p>
-    <p><strong>Budget-Splitter:</strong> Ausgaben enthalten, wer wie viel für wen bezahlt hat. Diese Angaben sind für alle Mitglieder des Trips sichtbar, weil sie für die gemeinsame Abrechnung nötig sind.</p>
+    <p><strong>Budget-Splitter:</strong> Ausgaben enthalten, wer wie viel für wen bezahlt hat. Diese Angaben sind für alle Mitglieder des Trips sichtbar, weil sie für die gemeinsame Abrechnung nötig sind. Eine Ausgabe lässt sich gleichmäßig oder individuell (nach Prozent oder Beträgen) auf die Teilnehmenden verteilen; der Anteil jedes Mitglieds wird mit der Ausgabe gespeichert. Nachträglich ändern oder löschen können eine Ausgabe nur die Person, die sie eingetragen hat, und der Ersteller des Trips; einen Änderungsverlauf gibt es nicht.</p>
+    <p><strong>Ändern der Reisedaten:</strong> Der Ersteller eines Trips kann den Reisezeitraum einmalig um höchstens 30 Tage gegenüber den ursprünglichen Daten ändern; das Reiseziel bleibt fest. Gespeichert werden die neuen und die ursprünglichen Daten sowie ein Zähler für die Änderung. Die Termine des Trips werden entsprechend mitverschoben, und alle Mitglieder sehen die neuen Daten.</p>
     <p><strong>Freitextfelder:</strong> Bitte tragen Sie in Notizfelder keine personenbezogenen Daten Dritter außerhalb Ihrer Reisegruppe ein, ohne deren Einverständnis.</p>
 
     <h2>5. Auftragsverarbeitung durch Google Firebase</h2>
     <p>Für Nutzerkonten (Firebase Authentication) und die Datenbank (Cloud Firestore) nutzen wir <strong>Firebase</strong> der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Mit Google besteht ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p>
     <p><strong>Drittlandübermittlung:</strong> Die Verarbeitung kann auch auf Servern der Google LLC in den USA stattfinden. Google ist nach dem EU-U.S. Data Privacy Framework zertifiziert; ergänzend gelten die Standardvertragsklauseln der EU-Kommission.</p>
+
+    <p><strong>Schutz vor Missbrauch (Firebase App Check):</strong> Damit nur echte Kopien der App auf die Datenbank zugreifen, nutzen wir Firebase App Check. Dabei weist Ihr Gerät mit dem Verfahren App Attest von Apple (in der Teilen-Erweiterung: DeviceCheck) nach, dass die Anfrage von der unveränderten App stammt, und tauscht diesen Nachweis bei Firebase gegen ein kurzlebiges Token, das jeder Anfrage an Firebase beigefügt wird. Dabei werden Attestierungsangaben Ihres Geräts und technisch bedingt Ihre IP-Adresse an Apple und Google übermittelt. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (Sicherheit der App und Schutz vor Missbrauch).</p>
 
     <h2>6. Weitere Anbieter in der App</h2>
     <h3>Titelbilder</h3>
@@ -95,9 +98,12 @@
     <p>Für Wettervorhersage und aktuelles Wetter nutzen wir den Wetterdienst <strong>Apple WeatherKit</strong> der Apple Distribution International Limited, Hollyhill Industrial Estate, Hollyhill, Cork, Irland. Dabei übermitteln wir die Koordinaten Ihres <strong>Reiseziels</strong> (nicht Ihres eigenen Standorts). Eine Nutzerkennung oder Ihr Reisezeitraum werden nicht übermittelt; die App wird gegenüber Apple über ihre eigene Berechtigung (Entitlement) ausgewiesen. Technisch bedingt erhält Apple dabei die IP-Adresse Ihres Geräts. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Wetteranzeige zu Ihrem Reiseziel). Zur Bestimmung der Zeitzone des Reiseziels wandelt Ihr Gerät diese Koordinaten außerdem über die Ortsdienste von Apple in einen Ort um.</p>
     <p>Wo Wetterdaten angezeigt werden, zeigt die App die von Apple vorgeschriebene Quellenangabe („Apple Weather“) mit einem Link auf die <a href="https://weatherkit.apple.com/legal-attribution.html">rechtlichen Hinweise und weiteren Datenquellen</a>. Es gilt zusätzlich die Datenschutzerklärung von Apple.</p>
     <h3>Ortssuche (Apple MapKit)</h3>
-    <p>Für die Suche nach Orten nutzen wir Apple MapKit. Dabei wird nur Ihre Texteingabe verwendet, nicht Ihr Gerätestandort. Es gilt zusätzlich die Datenschutzerklärung von Apple.</p>
+    <p>Für die Suche nach Orten nutzen wir Apple MapKit. Dabei werden Ihre Suchbegriffe sowie bei der Suche nach Einzelorten eine Region von etwa 50 km um das Ziel Ihres Trips an Apple übermittelt, nicht Ihr Gerätestandort; für das gewählte Ergebnis folgt eine weitere Anfrage. Das gilt auch in der Teilen-Erweiterung. Es gilt zusätzlich die Datenschutzerklärung von Apple.</p>
     <h3>Kalender-Export (Apple EventKit)</h3>
-    <p>Beim Export in den iPhone-Kalender fragt iOS nach Ihrer Erlaubnis. Der Export erfolgt einseitig und vollständig lokal auf Ihrem Gerät; wir erhalten davon keine Daten. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über die Systemabfrage).</p>
+    <p>Beim Export in den iPhone-Kalender fragt iOS nach Ihrer Erlaubnis. Der Export (eine Funktion von tripklar Plus) erfolgt einseitig und vollständig lokal auf Ihrem Gerät; wir erhalten davon keine Daten. Die App legt für jeden Trip einen eigenen Kalender an und liest keine fremden Einträge; übernommen werden Titel, Zeiten, Ort, Link und Notiz der Termine. Ein Kalenderdienst wie iCloud synchronisiert die Einträge danach nach seinen eigenen Bedingungen. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über die Systemabfrage).</p>
+
+    <h3>Lokale Erinnerungen</h3>
+    <p>Wenn Sie es in den Einstellungen der App einschalten, erinnert tripklar. Sie vor Terminen mit einer lokalen Mitteilung (15, 30 oder 60 Minuten vorher). iOS fragt dafür nach Ihrer Erlaubnis. Die Mitteilungen werden vollständig auf Ihrem Gerät geplant und angezeigt; es ist kein Server und kein Push-Dienst beteiligt, und es verlassen keine Daten Ihr Gerät. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über die Systemabfrage).</p>
 
     <h3>Käufe (Apple App Store)</h3>
     <p>tripklar Plus und einzelne Trips kaufen Sie über den App Store. Die Zahlung wickelt ausschließlich Apple ab; wir erhalten keine Zahlungs- oder Kartendaten. Ob ein Kauf besteht, prüft die App direkt auf Ihrem Gerät über Apple (StoreKit). Wir speichern Ihre Käufe nicht auf unseren Servern. Es gilt die Datenschutzerklärung von Apple. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO.</p>
@@ -114,7 +120,8 @@
     <p>Empfänger ist die GetYourGuide Deutschland GmbH, Sonnenburger Straße 73, 10437 Berlin, Deutschland. GetYourGuide verarbeitet die übertragenen Daten als eigenständiger Verantwortlicher für eigene Zwecke, etwa um Buchungen dem Partnerprogramm zuzuordnen. Wie lange GetYourGuide die Daten speichert und welche Dienstleister GetYourGuide einsetzt, auch außerhalb der EU (nach eigenen Angaben auf Grundlage von Standardvertragsklauseln), ergibt sich aus der <a href="https://www.getyourguide.com/c/privacy-policy/">Datenschutzerklärung von GetYourGuide</a>. Dort finden Sie auch die Kontaktdaten des Datenschutzteams von GetYourGuide.</p>
 
     <h2>8. Teilen-Erweiterung und lokale Speicherung</h2>
-    <p>Links, die Sie aus anderen Apps an tripklar. teilen, werden kurz in einem lokalen Speicherbereich auf Ihrem Gerät (App-Gruppe) zwischengelegt, bis Sie sie in einem Trip speichern. Außerdem speichern wir wenige technische Einstellungen nur lokal (z. B. den zuletzt geöffneten Trip). Diese Daten verlassen Ihr Gerät nicht.</p>
+    <p>Teilen Sie einen Link aus einer anderen App an tripklar., nutzt die Teilen-Erweiterung Ihre Anmeldung in der App, lädt Ihre Trips und speichert den Merkzettel-Eintrag direkt in der Datenbank (Abschnitt 5, einschließlich App Check; auf Wunsch mit Ortssuche über Apple MapKit). Sind Sie nicht angemeldet, wird der Link kurz in einem lokalen Speicherbereich auf Ihrem Gerät (App-Gruppe) zwischengelegt, bis die App ihn übernimmt.</p>
+    <p>Außerdem speichern wir einige technische Einstellungen nur lokal auf Ihrem Gerät, zum Beispiel den zuletzt geöffneten Trip, die Zuordnung exportierter Kalender, Ihre Einstellungen zu Erinnerungen und einen Zwischenspeicher für Bilder. Diese Daten verlassen Ihr Gerät nicht. Beim Abmelden und beim Löschen Ihres Kontos entfernt die App Erinnerungen, den zuletzt geöffneten Trip, noch nicht gespeicherte geteilte Links und weitere kontobezogene Marker von Ihrem Gerät.</p>
 
     <h2>9. Speicherdauer</h2>
     <p>Wir speichern Ihre Daten, solange Ihr Nutzerkonto besteht. Inhalte eines Trips bleiben bestehen, bis der Trip gelöscht wird. Beim Löschen eines Trips werden auch seine Termine, Merkzettel, Ausgaben und Packlisten-Einträge gelöscht.</p>
@@ -128,6 +135,7 @@
       <li>Trips, die Sie angelegt haben und an denen andere teilnehmen, gehen an ein anderes Mitglied über, damit die Gruppe weiterplanen kann.</li>
       <li>Ihre privaten Packlisten-Einträge werden gelöscht.</li>
     </ul>
+    <p>Bei Konten, die „Mit Apple anmelden“ nutzen, widerrufen wir zuerst den Zugriff von tripklar. auf Ihre Apple-ID. Gelingt das nicht, wird das Konto trotzdem gelöscht; die App zeigt dann einen Hinweis, wie Sie den Zugriff in den iPhone-Einstellungen (Name → Anmelden mit Apple → tripklar.) selbst beenden können.</p>
     <p>In gemeinsamen Trips bleiben Ausgaben, gemeinsame Packlisten-Einträge, Termine und Merkzettel bestehen, die Sie angelegt haben. Sie sind dort nur noch mit einer pseudonymen Nutzer-ID verknüpft und werden als „Ehemaliges Mitglied“ angezeigt. Das dient dem berechtigten Interesse der übrigen Mitglieder an einer vollständigen gemeinsamen Planung und Abrechnung (Art. 6 Abs. 1 lit. f DSGVO). Wenn Sie auch diese Einträge entfernt haben möchten, löschen Sie sie vor der Kontolöschung in der App oder schreiben Sie uns.</p>
 
     <h2>11. Diese Website</h2>

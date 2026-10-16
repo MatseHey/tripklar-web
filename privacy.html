@@ -62,12 +62,15 @@
       <li>Events, bookmarks, packing-list items and expenses you add</li>
     </ul>
     <p>This data is visible to every member of the same trip — that is the core of the app. Private packing-list items are visible only to you. <strong>Legal basis:</strong> Art. 6(1)(b) GDPR.</p>
-    <p><strong>Expense splitter:</strong> expenses record who paid how much for whom. All trip members can see this, as it is needed to settle up.</p>
+    <p><strong>Expense splitter:</strong> expenses record who paid how much for whom. All trip members can see this, as it is needed to settle up. An expense can be split equally or individually (by percentage or amounts) among the participants; each member's share is stored with the expense. Only the person who entered an expense and the trip's creator can change or delete it afterwards; there is no change history.</p>
+    <p><strong>Changing the trip dates:</strong> The creator of a trip can change the travel period once, by at most 30 days from the original dates; the destination stays fixed. We store the new and the original dates and a counter for the change. The trip's events are moved along accordingly, and all members see the new dates.</p>
     <p><strong>Free-text fields:</strong> please don't enter personal data about people outside your travel group without their consent.</p>
 
     <h2>5. Processing by Google Firebase</h2>
     <p>For accounts (Firebase Authentication) and the database (Cloud Firestore) we use <strong>Firebase</strong> by Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland, under a data processing agreement pursuant to Art. 28 GDPR.</p>
     <p><strong>International transfers:</strong> processing may also take place on servers of Google LLC in the United States. Google is certified under the EU-U.S. Data Privacy Framework; the European Commission's Standard Contractual Clauses apply in addition.</p>
+
+    <p><strong>Protection against misuse (Firebase App Check):</strong> So that only genuine copies of the app access the database, we use Firebase App Check. Your device proves with Apple's App Attest (in the share extension: DeviceCheck) that the request comes from the unmodified app and exchanges this proof with Firebase for a short-lived token that is attached to every request to Firebase. In doing so, attestation details of your device and, for technical reasons, your IP address are transmitted to Apple and Google. <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (security of the app and protection against misuse).</p>
 
     <h2>6. Other services in the app</h2>
     <h3>Cover photos</h3>
@@ -76,9 +79,12 @@
     <p>For forecasts and current weather we use the weather service <strong>Apple WeatherKit</strong> provided by Apple Distribution International Limited, Hollyhill Industrial Estate, Hollyhill, Cork, Ireland. We send the coordinates of your <strong>destination</strong> (not your own location). No user identifier and no travel dates are sent; the app identifies itself to Apple through its own entitlement. Apple technically receives your device's IP address. <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in showing the weather for your destination). To determine the destination's time zone, your device also converts these coordinates into a place name through Apple's location services.</p>
     <p>Wherever weather data is shown, the app displays the source attribution required by Apple (“Apple Weather”) with a link to the <a href="https://weatherkit.apple.com/legal-attribution.html">legal notices and other data sources</a>. Apple's privacy policy applies as well.</p>
     <h3>Place search (Apple MapKit)</h3>
-    <p>Place search uses Apple MapKit with only the text you type, never your device location. Apple's privacy policy applies as well.</p>
+    <p>Place search uses Apple MapKit. Your search terms and, when searching for a single place, a region of about 50 km around your trip's destination are sent to Apple, never your device location; choosing a result triggers one further request. This also applies in the share extension. Apple's privacy policy applies as well.</p>
     <h3>Calendar export (Apple EventKit)</h3>
-    <p>When exporting to your iPhone calendar, iOS asks for your permission. The export is one-way and happens entirely on your device; we receive no data from it. <strong>Legal basis:</strong> Art. 6(1)(a) GDPR (consent via the system prompt).</p>
+    <p>When exporting to your iPhone calendar, iOS asks for your permission. The export (a tripklar Plus feature) is one-way and happens entirely on your device; we receive no data from it. The app creates a separate calendar for each trip and does not read other entries; the events' title, times, place, link and note are copied. A calendar service such as iCloud then syncs the entries under its own terms. <strong>Legal basis:</strong> Art. 6(1)(a) GDPR (consent via the system prompt).</p>
+
+    <h3>Local reminders</h3>
+    <p>If you switch it on in the app's settings, tripklar. reminds you before events with a local notification (15, 30 or 60 minutes ahead). iOS asks for your permission. The notifications are scheduled and shown entirely on your device; no server and no push service is involved, and no data leaves your device. <strong>Legal basis:</strong> Art. 6(1)(a) GDPR (consent via the system prompt).</p>
 
     <h3>Purchases (Apple App Store)</h3>
     <p>You buy tripklar Plus and single trips through the App Store. Payment is handled entirely by Apple; we receive no payment or card data. The app checks whether a purchase exists directly on your device through Apple (StoreKit). We don't store your purchases on our servers. Apple's privacy policy applies. <strong>Legal basis:</strong> Art. 6(1)(b) GDPR.</p>
@@ -92,7 +98,8 @@
     <p>The recipient is GetYourGuide Deutschland GmbH, Sonnenburger Straße 73, 10437 Berlin, Germany. GetYourGuide processes the transmitted data as an independent controller for its own purposes, such as attributing bookings to the partner programme. How long GetYourGuide retains the data and which service providers it uses, including outside the EU (by its own account on the basis of standard contractual clauses), is set out in <a href="https://www.getyourguide.com/c/privacy-policy/">GetYourGuide's privacy policy</a>, which also lists how to contact GetYourGuide's data protection team.</p>
 
     <h2>8. Share extension and local storage</h2>
-    <p>Links you share into tripklar. from other apps are briefly kept in a local storage area on your device (App Group) until you save them to a trip. We also keep a few technical settings locally (e.g. the last opened trip). This data never leaves your device.</p>
+    <p>If you share a link into tripklar. from another app, the share extension uses your sign-in from the app, loads your trips and saves the bookmark directly in the database (section 5, including App Check; optionally with place search via Apple MapKit). If you are not signed in, the link is briefly kept in a local storage area on your device (App Group) until the app picks it up.</p>
+    <p>We also keep some technical settings locally on your device only, for example the last opened trip, the mapping of exported calendars, your reminder settings and a cache for images. This data never leaves your device. When you sign out and when you delete your account, the app removes reminders, the last opened trip, shared links not yet saved and other account-related markers from your device.</p>
 
     <h2>9. Retention</h2>
     <p>We keep your data as long as your account exists. A trip's content remains until the trip is deleted; deleting a trip also deletes its events, bookmarks, expenses and packing-list items.</p>
@@ -106,6 +113,7 @@
       <li>hands trips you created with others over to another member, so the group can keep planning,</li>
       <li>deletes your private packing-list items.</li>
     </ul>
+    <p>For accounts that use “Sign in with Apple”, we first revoke tripklar.'s access to your Apple ID. If that fails, the account is deleted anyway; the app then shows a note on how to end the access yourself in the iPhone settings (your name → Sign in with Apple → tripklar.).</p>
     <p>Expenses, shared packing-list items, events and bookmarks you added to shared trips remain. They are then only linked to a pseudonymous user ID and shown as “Former member”. This serves the other members' legitimate interest in a complete shared plan and settlement (Art. 6(1)(f) GDPR). If you want these removed too, delete them in the app before deleting your account, or contact us.</p>
 
     <h2>11. This website</h2>
