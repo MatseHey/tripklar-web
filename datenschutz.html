@@ -49,7 +49,7 @@
 
     <h2>2. Überblick</h2>
     <p>tripklar. ist eine App zur gemeinsamen Reiseplanung. Für Konto, gemeinsame Trips, Budget-Splitter, Packlisten, Kalender und Merkzettel nutzen wir <strong>Google Firebase</strong> (Authentication und Firestore-Datenbank) als technischen Dienstleister, dazu Apple für Wetter und Ortssuche sowie GetYourGuide für Partnerangebote.</p>
-    <p>Wir selbst setzen <strong>keine</strong> Analyse- oder Tracking-Software ein und binden <strong>keine</strong> Werbenetzwerke ein. Die App zeigt gekennzeichnete Partnerangebote von GetYourGuide (Abschnitt 7). Das Aktivitäten-Widget von GetYourGuide, das eine Besucher-Kennung verwendet, wird nur mit Ihrer Einwilligung geladen. Wir greifen nicht auf Ihr Adressbuch oder Ihren Gerätestandort zu.</p>
+    <p>Wir selbst setzen <strong>keine</strong> Analyse- oder Tracking-Software ein und binden <strong>keine</strong> Werbenetzwerke ein. Die App zeigt gekennzeichnete Partnerlinks zu GetYourGuide (Abschnitt 7); bis Sie einen davon antippen, wird nichts an GetYourGuide übertragen. Wir greifen nicht auf Ihr Adressbuch oder Ihren Gerätestandort zu.</p>
 
     <h2>3. Registrierung und Nutzerkonto</h2>
     <p>Für die Nutzung von tripklar. ist ein Nutzerkonto erforderlich. Bei der Registrierung erheben wir:</p>
@@ -103,33 +103,18 @@
     <p>tripklar Plus und einzelne Trips kaufen Sie über den App Store. Die Zahlung wickelt ausschließlich Apple ab; wir erhalten keine Zahlungs- oder Kartendaten. Ob ein Kauf besteht, prüft die App direkt auf Ihrem Gerät über Apple (StoreKit). Wir speichern Ihre Käufe nicht auf unseren Servern. Es gilt die Datenschutzerklärung von Apple. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO.</p>
 
     <h2>7. Partnerangebote von GetYourGuide (Werbung)</h2>
-    <!-- Grundlage: GetYourGuideLink.swift, GetYourGuideOffer.swift, GetYourGuideSlider.swift (main, Stand 14.10.2026),
-         Partnerbedingungen GetYourGuide 8.5 (eigenständige Verantwortliche) und deren Datenschutzerklärung.
-         Datenumfang des Widgets nicht per Netzwerkmitschnitt geprüft, siehe OFFENE-PUNKTE.md. -->
-    <p>tripklar. zeigt Angebote für Touren, Tickets und Ausflüge von <strong>GetYourGuide</strong>. Wird über diese Angebote gebucht, erhalten wir eine Provision; für Sie wird die Buchung dadurch nicht teurer. Die Angebote sind in der App als „Anzeige: Partnerlink zu GetYourGuide“ gekennzeichnet und erscheinen nur für Trips, die noch nicht vorbei sind.</p>
+    <!-- Grundlage: GetYourGuideLink.swift, GetYourGuideOffer.swift (main, Stand 16.10.2026; das Aktivitäten-Widget
+         ist aus der App entfernt), Partnerbedingungen GetYourGuide 8.5 (eigenständige Verantwortliche) und deren
+         Datenschutzerklärung. Ausführliche Fassung: docs/legal/datenschutzerklaerung-de.md im App-Repo. -->
+    <p>tripklar. zeigt Einen Link zu Angeboten für Touren, Tickets und Ausflüge von <strong>GetYourGuide</strong>. Wird über diese Angebote gebucht, erhalten wir eine Provision; für Sie wird die Buchung dadurch nicht teurer. Die Angebote sind in der App als „Anzeige: Partnerlink zu GetYourGuide“ gekennzeichnet und erscheinen nur für Trips, die noch nicht vorbei sind.</p>
     <h3>Partnerlinks</h3>
     <p>In der Trip-Ansicht, unter „Inspiration“ und auf der Startseite gibt es Schaltflächen zu GetYourGuide (z. B. „Erlebnisse in [Ort]“). Erst wenn Sie eine davon antippen, öffnet sich die Suche von GetYourGuide für den Ort Ihres Reiseziels im In-App-Browser (Safari). Dabei werden der Ortsname, unsere Partner-Kennung und eine Kennung der Stelle in der App übertragen, an der Sie den Link angetippt haben, technisch bedingt außerdem Ihre IP-Adresse. Ihren Namen, Ihre E-Mail-Adresse oder Ihre Nutzer-ID übertragen wir nicht. Für alles, was danach auf den Seiten von GetYourGuide geschieht, einschließlich Cookies und einer Buchung, ist GetYourGuide verantwortlich. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, Ihnen auf Ihren Wunsch passende Angebote zu zeigen und Buchungen unserem Partnerprogramm zuzuordnen).</p>
-    <h3>Aktivitäten-Widget auf der Startseite</h3>
-    <p>Auf der Startseite können wir für einen bevorstehenden Trip Aktivitäten am Reiseziel mit Foto, Dauer und Bewertung zeigen. Dafür binden wir das Aktivitäten-Widget von GetYourGuide ein. Es wird direkt von Servern von GetYourGuide (widget.getyourguide.com) geladen und in der App in einer eingebetteten Webansicht angezeigt.</p>
-    <p><strong>Nur mit Ihrer Einwilligung:</strong> Das Widget wird nicht automatisch geladen. Zunächst sehen Sie nur die Zeile „Aktivitäten von GetYourGuide laden“. Erst wenn Sie sie antippen, wird das Widget geladen; vorher wird keine Verbindung zu GetYourGuide aufgebaut.</p>
-    <p>Nach unserem Kenntnisstand erhält GetYourGuide beim Laden des Widgets:</p>
-    <ul>
-      <li>den Ortsnamen Ihres Reiseziels (er steht als Zeile über dem Widget, z. B. „Touren, Tickets und Ausflüge in Palma“; danach wählt das Widget die Aktivitäten aus),</li>
-      <li>Ihre IP-Adresse und übliche technische Angaben Ihres Geräts (z. B. Betriebssystem, Browserkennung, Sprache, Uhrzeit),</li>
-      <li>unsere Partner-Kennung und eine von GetYourGuide vergebene Besucher-Kennung, mit der GetYourGuide Besuche und Buchungen dem Partnerprogramm zuordnet,</li>
-      <li>die Adresse tripklar.app als Herkunft der eingebetteten Seite,</li>
-      <li>gegebenenfalls Ihre Interaktionen mit dem Widget (z. B. Wischen oder Antippen einer Aktivität).</li>
-    </ul>
-    <p>Ihren Namen, Ihre E-Mail-Adresse, Ihre Nutzer-ID, Angaben zu Mitreisenden, Ihren Gerätestandort oder andere Inhalte Ihres Trips übertragen wir nicht. Wir selbst speichern keine Daten aus dem Widget und erhalten von GetYourGuide keine Angaben dazu, wer das Widget gesehen oder angetippt hat, sondern nur eine Übersicht über Buchungen und Provisionen.</p>
-    <p><strong>Cookies und lokaler Speicher:</strong> Das Widget kann in der eingebetteten Ansicht Cookies oder ähnliche Daten speichern und auslesen. Diese Ansicht nutzt einen nicht dauerhaften Speicher: Die Daten werden spätestens beim Beenden der App verworfen und nicht mit Safari oder anderen Apps geteilt.</p>
-    <p><strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, für den Zugriff auf Ihr Gerät § 25 Abs. 1 TDDDG). Sie erteilen sie durch Antippen von „Aktivitäten von GetYourGuide laden“. Die übrigen Funktionen der App hängen nicht davon ab. Ihre Entscheidung speichern wir nur lokal auf Ihrem Gerät.</p>
-    <p><strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie über dem Widget auf „Ausblenden“ tippen. Danach wird nichts mehr von GetYourGuide geladen, bis Sie erneut zustimmen. Die Rechtmäßigkeit der Verarbeitung bis zum Widerruf bleibt unberührt.</p>
-    <p>Tippen Sie im Widget eine Aktivität an, öffnet sich die Seite von GetYourGuide im In-App-Browser; es gilt dasselbe wie bei den Partnerlinks.</p>
+    <p><strong>Vor dem Antippen findet keine Übertragung statt.</strong> Die Schaltfläche besteht nur aus Text und dem GetYourGuide-Logo, das fest in der App enthalten ist. tripklar. lädt dafür nichts von GetYourGuide nach und bindet weder ein Skript noch eine eingebettete Webansicht von GetYourGuide ein. Wir protokollieren nicht, wer den Link antippt, und speichern dazu nichts auf Ihrem Gerät oder auf unseren Servern. Cookies oder ähnliche Technologien kann nur GetYourGuide in seinem eigenen Browserbereich setzen; dafür gilt deren Einwilligungsabfrage. Ihrer Verarbeitung durch uns können Sie nach Art. 21 DSGVO widersprechen; am einfachsten, indem Sie den Link nicht antippen.</p>
     <h3>Empfänger und Verantwortlichkeit</h3>
-    <p>Empfänger ist die GetYourGuide Deutschland GmbH, Sonnenburger Straße 73, 10437 Berlin, Deutschland. GetYourGuide verarbeitet die übertragenen Daten als eigenständiger Verantwortlicher für eigene Zwecke, etwa um das Widget auszuliefern und Buchungen dem Partnerprogramm zuzuordnen. Wie lange GetYourGuide die Daten speichert und welche Dienstleister GetYourGuide einsetzt, auch außerhalb der EU (nach eigenen Angaben auf Grundlage von Standardvertragsklauseln), ergibt sich aus der <a href="https://www.getyourguide.com/c/privacy-policy/">Datenschutzerklärung von GetYourGuide</a>. Dort finden Sie auch die Kontaktdaten des Datenschutzteams von GetYourGuide.</p>
+    <p>Empfänger ist die GetYourGuide Deutschland GmbH, Sonnenburger Straße 73, 10437 Berlin, Deutschland. GetYourGuide verarbeitet die übertragenen Daten als eigenständiger Verantwortlicher für eigene Zwecke, etwa um Buchungen dem Partnerprogramm zuzuordnen. Wie lange GetYourGuide die Daten speichert und welche Dienstleister GetYourGuide einsetzt, auch außerhalb der EU (nach eigenen Angaben auf Grundlage von Standardvertragsklauseln), ergibt sich aus der <a href="https://www.getyourguide.com/c/privacy-policy/">Datenschutzerklärung von GetYourGuide</a>. Dort finden Sie auch die Kontaktdaten des Datenschutzteams von GetYourGuide.</p>
 
     <h2>8. Teilen-Erweiterung und lokale Speicherung</h2>
-    <p>Links, die Sie aus anderen Apps an tripklar. teilen, werden kurz in einem lokalen Speicherbereich auf Ihrem Gerät (App-Gruppe) zwischengelegt, bis Sie sie in einem Trip speichern. Außerdem speichern wir wenige technische Einstellungen nur lokal (z. B. den zuletzt geöffneten Trip oder Ihre Entscheidung zum Aktivitäten-Widget von GetYourGuide). Diese Daten verlassen Ihr Gerät nicht.</p>
+    <p>Links, die Sie aus anderen Apps an tripklar. teilen, werden kurz in einem lokalen Speicherbereich auf Ihrem Gerät (App-Gruppe) zwischengelegt, bis Sie sie in einem Trip speichern. Außerdem speichern wir wenige technische Einstellungen nur lokal (z. B. den zuletzt geöffneten Trip). Diese Daten verlassen Ihr Gerät nicht.</p>
 
     <h2>9. Speicherdauer</h2>
     <p>Wir speichern Ihre Daten, solange Ihr Nutzerkonto besteht. Inhalte eines Trips bleiben bestehen, bis der Trip gelöscht wird. Beim Löschen eines Trips werden auch seine Termine, Merkzettel, Ausgaben und Packlisten-Einträge gelöscht.</p>
@@ -151,7 +136,7 @@
     <p><strong>Kontakt per E-Mail:</strong> Wenn Sie uns schreiben, verarbeiten wir Ihre Adresse und Ihre Nachricht, um Ihnen zu antworten, und löschen sie, wenn die Anfrage erledigt ist. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, Anfragen zu beantworten) bzw. lit. b, wenn es um Ihr Konto geht.</p>
 
     <h2>12. Ihre Rechte</h2>
-    <p>Sie haben nach der DSGVO das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3), beim Aktivitäten-Widget von GetYourGuide direkt in der App über „Ausblenden“.</p>
+    <p>Sie haben nach der DSGVO das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Eine erteilte Einwilligung (zum Beispiel für den Kalender-Export oder Benachrichtigungen) können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3), in der Regel in den iPhone-Einstellungen.</p>
     <p>Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO), z. B. beim Hamburgischen Beauftragten für Datenschutz und Informationsfreiheit.</p>
     <p>Zur Ausübung Ihrer Rechte genügt eine E-Mail an <a href="mailto:info@tripklar.app">info@tripklar.app</a>.</p>
 

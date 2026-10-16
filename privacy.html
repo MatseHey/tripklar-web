@@ -40,7 +40,7 @@
 
     <h2>2. Overview</h2>
     <p>tripklar. is an app for planning trips together. For accounts, shared trips, the expense splitter, packing lists, calendar and bookmarks we use <strong>Google Firebase</strong> (Authentication and the Firestore database) as a technical service provider, plus Apple for weather and place search and GetYourGuide for partner offers.</p>
-    <p>We ourselves do <strong>not</strong> use analytics or tracking software and do <strong>not</strong> embed advertising networks. The app shows labelled partner offers from GetYourGuide (section 7). GetYourGuide's activities widget, which uses a visitor ID, is loaded only with your consent. We do not access your contacts or your device's location.</p>
+    <p>We ourselves do <strong>not</strong> use analytics or tracking software and do <strong>not</strong> embed advertising networks. The app shows labelled partner links to GetYourGuide (section 7); nothing is transmitted to GetYourGuide until you tap one of them. We do not access your contacts or your device's location.</p>
 
     <h2>3. Registration and account</h2>
     <p>Using tripklar. requires an account. When you register we collect:</p>
@@ -84,30 +84,15 @@
     <p>You buy tripklar Plus and single trips through the App Store. Payment is handled entirely by Apple; we receive no payment or card data. The app checks whether a purchase exists directly on your device through Apple (StoreKit). We don't store your purchases on our servers. Apple's privacy policy applies. <strong>Legal basis:</strong> Art. 6(1)(b) GDPR.</p>
 
     <h2>7. Partner offers from GetYourGuide (advertising)</h2>
-    <p>tripklar. shows offers for tours, tickets and activities from <strong>GetYourGuide</strong>. If a booking is made through these offers, we receive a commission; it does not make the booking more expensive for you. The offers are labelled in the app as “Ad: partner link to GetYourGuide” and appear only for trips that have not yet ended.</p>
+    <p>tripklar. shows a link to offers for tours, tickets and activities from <strong>GetYourGuide</strong>. If a booking is made through these offers, we receive a commission; it does not make the booking more expensive for you. The offers are labelled in the app as “Ad: partner link to GetYourGuide” and appear only for trips that have not yet ended.</p>
     <h3>Partner links</h3>
     <p>In the trip view, under “Inspiration” and on the home screen there are buttons to GetYourGuide (e.g. “Experiences in [place]”). Only when you tap one does GetYourGuide's search for your destination open in the in-app browser (Safari). This transmits the place name, our partner ID and an identifier of the spot in the app where you tapped the link, and for technical reasons your IP address. We do not transmit your name, email address or user ID. GetYourGuide is responsible for everything that happens on its pages afterwards, including cookies and any booking. <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in showing you suitable offers at your request and attributing bookings to our partner programme).</p>
-    <h3>Activities widget on the home screen</h3>
-    <p>On the home screen, for an upcoming trip, we can show activities at your destination with photo, duration and rating. For this we embed GetYourGuide's activities widget. It is loaded directly from GetYourGuide's servers (widget.getyourguide.com) and displayed in the app in an embedded web view.</p>
-    <p><strong>Only with your consent:</strong> The widget is not loaded automatically. At first you only see the line “Load activities from GetYourGuide”. Only when you tap it is the widget loaded; until then no connection to GetYourGuide is made.</p>
-    <p>To our knowledge, GetYourGuide receives the following when the widget loads:</p>
-    <ul>
-      <li>the place name of your destination (it appears as a line above the widget, e.g. “Tours, tickets and activities in Palma”, and the widget picks activities based on it),</li>
-      <li>your IP address and usual technical details of your device (e.g. operating system, browser identifier, language, time),</li>
-      <li>our partner ID and a visitor ID assigned by GetYourGuide, which GetYourGuide uses to attribute visits and bookings to the partner programme,</li>
-      <li>the address tripklar.app as the origin of the embedded page,</li>
-      <li>where applicable, your interactions with the widget (e.g. swiping or tapping an activity).</li>
-    </ul>
-    <p>We do not transmit your name, email address, user ID, details about your co-travellers, your device location or any other trip content. We ourselves store no data from the widget, and GetYourGuide does not tell us who saw or tapped the widget; we only receive an overview of bookings and commissions.</p>
-    <p><strong>Cookies and local storage:</strong> The widget may store and read cookies or similar data within the embedded view. That view uses non-persistent storage: the data is discarded at the latest when the app quits and is not shared with Safari or other apps.</p>
-    <p><strong>Legal basis:</strong> Your consent (Art. 6(1)(a) GDPR, and § 25(1) TDDDG for access to your device). You give it by tapping “Load activities from GetYourGuide”. The rest of the app does not depend on it. We store your choice only locally on your device.</p>
-    <p><strong>Withdrawal:</strong> You can withdraw your consent at any time with effect for the future by tapping “Hide” above the widget. After that nothing more is loaded from GetYourGuide until you agree again. Processing carried out before withdrawal remains lawful.</p>
-    <p>If you tap an activity in the widget, GetYourGuide's page opens in the in-app browser; the same applies as for partner links.</p>
+    <p><strong>Nothing is transmitted before you tap.</strong> The button consists only of text and the GetYourGuide logo, which is built into the app. tripklar. loads nothing from GetYourGuide for it and embeds neither a script nor a web view from GetYourGuide. We do not log who taps the link, and we store nothing about it on your device or on our servers. Only GetYourGuide can set cookies or similar technologies, in its own browsing area; its own consent request applies there. You can object to our processing under Art. 21 GDPR; the easiest way is not to tap the link.</p>
     <h3>Recipient and responsibility</h3>
-    <p>The recipient is GetYourGuide Deutschland GmbH, Sonnenburger Straße 73, 10437 Berlin, Germany. GetYourGuide processes the transmitted data as an independent controller for its own purposes, such as delivering the widget and attributing bookings to the partner programme. How long GetYourGuide retains the data and which service providers it uses, including outside the EU (by its own account on the basis of standard contractual clauses), is set out in <a href="https://www.getyourguide.com/c/privacy-policy/">GetYourGuide's privacy policy</a>, which also lists how to contact GetYourGuide's data protection team.</p>
+    <p>The recipient is GetYourGuide Deutschland GmbH, Sonnenburger Straße 73, 10437 Berlin, Germany. GetYourGuide processes the transmitted data as an independent controller for its own purposes, such as attributing bookings to the partner programme. How long GetYourGuide retains the data and which service providers it uses, including outside the EU (by its own account on the basis of standard contractual clauses), is set out in <a href="https://www.getyourguide.com/c/privacy-policy/">GetYourGuide's privacy policy</a>, which also lists how to contact GetYourGuide's data protection team.</p>
 
     <h2>8. Share extension and local storage</h2>
-    <p>Links you share into tripklar. from other apps are briefly kept in a local storage area on your device (App Group) until you save them to a trip. We also keep a few technical settings locally (e.g. the last opened trip or your choice for GetYourGuide's activities widget). This data never leaves your device.</p>
+    <p>Links you share into tripklar. from other apps are briefly kept in a local storage area on your device (App Group) until you save them to a trip. We also keep a few technical settings locally (e.g. the last opened trip). This data never leaves your device.</p>
 
     <h2>9. Retention</h2>
     <p>We keep your data as long as your account exists. A trip's content remains until the trip is deleted; deleting a trip also deletes its events, bookmarks, expenses and packing-list items.</p>
@@ -129,7 +114,7 @@
     <p><strong>Contact by email:</strong> if you write to us, we process your address and message to reply, and delete them once the request is dealt with. <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in answering requests), or 6(1)(b) where it concerns your account.</p>
 
     <h2>12. Your rights</h2>
-    <p>Under the GDPR you have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on legitimate interests (Art. 21). You can withdraw consent at any time with effect for the future (Art. 7(3)); for GetYourGuide's activities widget directly in the app via “Hide”.</p>
+    <p>Under the GDPR you have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on legitimate interests (Art. 21). You can withdraw consent at any time with effect for the future (Art. 7(3)), for example for the calendar export or notifications, usually in the iPhone settings.</p>
     <p>You may also lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), e.g. the Hamburg Commissioner for Data Protection and Freedom of Information.</p>
     <p>To exercise your rights, simply email <a href="mailto:info@tripklar.app">info@tripklar.app</a>.</p>
 
